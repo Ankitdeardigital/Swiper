@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<style>
+    .swiper-wrapper{
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <h2>Slide 1</h2>
+                <p>Discover the latest trends in fashion.</p>
+                <p>Shop now and get free shipping!</p>
+            </div>
+            <div class="swiper-slide">
+                <h2>Slide 2</h2>
+                <p>Experience the thrill of adventure.</p>
+                <p>Book your next trip with us!</p>
+            </div>
+            <div class="swiper-slide">
+                <h2>Slide 3</h2>
+                <p>Unlock your creativity with our innovative tools.</p>
+                <p>Join our community of artists today!</p>
+            </div>
+          <!-- Add as many slides as you want -->
+        </div>
+      
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Navigation -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+      <script>
+        // Function to check screen width and show/hide Swiper slider
+        function toggleSwiperVisibility() {
+            var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+            // If screen width is less than 600 pixels, initialize Swiper slider
+            if (screenWidth < 600) {
+                var swiper = new Swiper('.swiper-container', {
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                });
+            }
+        }
+
+        // Initial check on page load
+        toggleSwiperVisibility();
+
+        // Event listener for window resize to adjust Swiper visibility
+        window.addEventListener('resize', toggleSwiperVisibility);
+    </script>
+</body>
+</html>
